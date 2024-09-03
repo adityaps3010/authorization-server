@@ -1,0 +1,18 @@
+server:
+  port: 8083
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          custom:
+            client-id: client1
+            client-secret: secret1
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:9000/auth
+            scope: openid profile
+        provider:
+          custom:
+            authorization-uri: http://localhost:8083/oauth2/authorize
+            token-uri: http://localhost:8083/oauth2/token
